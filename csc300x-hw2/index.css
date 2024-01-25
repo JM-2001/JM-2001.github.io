@@ -1,0 +1,93 @@
+body, html {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #F1E4C3;
+}
+#bannerDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+}
+#bannerLeftDiv {
+    float: left;
+    width: 50%;
+}
+#bannerLeftDiv p, h1, h3 {
+    margin: 0;
+}
+#bannerLeftDiv p {
+    text-align: center;
+}
+#bannerLeftDiv h1 {
+font-size: 3em;
+}
+#bannerRightDiv {
+    float: right;
+    width: 40%;
+}
+#bannerLeftDiv a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    font-size: 1.25em;
+    color: #ffffff;
+    background-color: #205295;
+    border-radius: 30px;
+    width: 50%;
+    height: 100px;
+    margin: 50px auto;
+}
+#bannerLeftDiv a:hover {
+    background-color: #2C74B3;
+}
+#bannerRightDiv a {
+    font-style: italic;
+    font-size: 0.7em;
+    text-decoration: none;
+    color: inherit;
+}
+#bannerRightDiv img {
+    border-radius: 30px;
+    height: 100%;
+    width: 100%;
+}
+#bannerRightDiv figcaption {
+    text-align: center;
+}
+table {
+    background-color: #D9CB50;
+    border-radius: 20px;
+    padding: 10px;
+    width: -webkit-fill-available;
+    margin-top: 50px;
+}
+table a, table p {
+    text-decoration: none;    
+    text-align: center;
+    font-style: italic;
+    color: #205295;
+}
+table a:hover, table p:hover {
+    color: #2C74B3;
+}
+table thead tr th{
+    background-color: #F0E161;
+    padding: 15px;
+}
+table tbody tr td {
+    background-color: #FFF38C;
+    padding: 15px;
+}
+#theadLeft {
+    border-radius: 10px 0 0 0;
+}
+#theadRight {
+    border-radius: 0 10px 0 0;
+}
+#trowLeft {
+    border-radius: 0 0 0 10px;
+}
+#trowRight {
+    border-radius: 0 0 10px 0;
+}
