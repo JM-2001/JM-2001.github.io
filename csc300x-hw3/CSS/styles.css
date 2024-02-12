@@ -1,0 +1,277 @@
+body,
+html {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin: 0px;
+    background-color: #F9F5E7;
+}
+
+/* Header & Nav */
+header {
+    background-color: #EDDBC7;
+}
+
+header nav {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header nav ul {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+header nav ul li {
+    display: inline-block;
+    height: 50px;
+    width: 125px;
+    margin: 0px 10px;
+}
+
+header nav ul li a {
+    display: block;
+    line-height: 50px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: capitalize;
+    color: #000000;
+}
+
+header nav ul li a.current,
+header nav ul li a:hover {
+    background-color: #f0e3d2;
+}
+
+/* Main of index.html */
+main {
+    padding: 10px;
+}
+
+main h1,
+main h2,
+main h3,
+main h4 {
+    margin: 15px 0px 5px 0px;
+}
+
+main p {
+    margin: 5px 0px;
+}
+
+.recommended-esta-section {
+    margin: 30px 10px;
+    padding: 10px;
+    border: 5px solid #f0e3d4;
+    border-radius: 20px;
+}
+
+.recommended-esta-section ul {
+    margin: 5px 0px;
+    padding: 0px 0px 0px 25px;
+}
+
+.recommended-esta-section ul li {
+    margin: 5px 0px;
+}
+
+.dishes-div {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.dishes-div-reg {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dishes-div-reg figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dishes-div-reg a {
+    text-decoration: none;
+    color: #000000;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.dish-div-article {
+    display: none;
+}
+
+.dish-div-article-show {
+    display: block;
+}
+
+.img-size-reg {
+    height: 150px;
+    width: 150px;
+    border-radius: 10px;
+}
+
+.img-size-large {
+    height: 275px;
+    width: 275px;
+    border-radius: 10px;
+}
+
+@media screen and (max-width: 450px) {
+    .dish-div-article-show {
+        display: block;
+        width: 75%;
+    }
+}
+
+/* main of meal-plan html */
+#main-container-section {
+    display: flex;
+}
+
+#main-container-section h1 {
+    display: none;
+}
+
+#leftside-meal-section {
+    float: left;
+    width: 15%;
+    margin: 30px 10px;
+    padding: 20px;
+    border: 5px solid #f0e3d4;
+    border-radius: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+#rightside-meal-section {
+    float: right;
+    width: 75%;
+    margin: 30px 10px;
+    padding: 20px;
+    border: 5px solid #f0e3d4;
+    border-radius: 20px;
+
+}
+
+.aside-meal-section {
+    text-align: center;
+}
+
+.aside-meal-dish-div {
+    border: 5px solid #f0e3d4;
+    border-radius: 20px;
+    margin: 15px 0px;
+}
+
+.aside-meal-dish-div figure {
+    margin: 10px 10px 0px 10px;
+}
+
+.aside-meal-dish-div figure img {
+    display: block;
+    height: 100%;
+    width: 100%;
+}
+
+.aside-meal-dish-div a {
+    text-decoration: none;
+    color: #000000;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.aside-meal-dish-div p {
+    margin: 0px 0px 10px 0px;
+}
+
+#rightside-meal-info-div {
+    width: auto;
+    margin: 0px 0px 15px 0px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #000000;
+}
+
+.meal-plan-dish-div {
+    width: auto;
+    margin: 10px 0px;
+}
+
+.meal-plan-dish-info-flex-div {
+    width: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.meal-plan-dish-btn-div {
+    margin: 5px 0px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: center;
+    gap: 20px;
+}
+
+.dish-add-btn,
+.dish-remove-btn {
+    height: 40px;
+    width: 150px;
+    outline: none;
+    color: #ffffff;
+}
+
+.dish-add-btn {
+    background-color: #0B60B0;
+    border: none;
+    border-radius: 10px;
+}
+
+.dish-add-btn:hover {
+    background-color: #40A2D8;
+}
+
+.dish-remove-btn {
+    background-color: #ED2B2A;
+    border: none;
+    border-radius: 10px;
+}
+
+.dish-remove-btn:hover {
+    background-color: #F15A59;
+}
+
+#rightside-meal-info-bottom-div {
+    width: auto;
+    margin: 0px 0px 15px 0px;
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #000000;
+}
+
+@media screen and (max-width: 600px) {
+
+    #leftside-meal-section {
+        float: left;
+        width: 25%;
+        margin: 30px 10px;
+        padding: 20px;
+        border: 5px solid #f0e3d4;
+        border-radius: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+    }
+
+}
