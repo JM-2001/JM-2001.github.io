@@ -1,0 +1,60 @@
+<!--
+    Jonathan Moreno
+    Assignment 4
+    This assignment is meant to demonstrate our html, css, and javascript knowledge to create a rock, paper, scissors game.
+-->
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <script src="scripts/script.js" defer></script>
+    <title>Rock, Paper, Scissors!</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <h1>Rock, Paper, Scissors!</h1>
+            <ul>
+                <li>
+                    <a href="index.html" class="current">Home</a>
+                </li>
+                <li>
+                    <a href="#player-div">Game</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div id="player-div">
+            <div id="player-options-div">
+                <div class="option-div" id="player-option-rock">
+                    <img src="images/rock.PNG" alt="Option: Rock">
+                </div>
+                <div class="option-div" id="player-option-paper">
+                    <img src="images/paper.PNG" alt="Option: Paper">
+                </div>
+                <div class="option-div" id="player-option-scissors">
+                    <img src="images/scissors.PNG" alt="Option: Scissors">
+                </div>
+            </div>
+            <h2>Your throw</h2>
+        </div>
+        <div id="computer-div">
+            <div class="option-div" id="computer-option-id">
+                <img src="images/question-mark.PNG" alt="Option: Computer">
+            </div>
+            <h2>Computer throw</h2>
+        </div>
+        <div id="game-results-div">
+            <h2>Results: ?</h2>
+            <button type="button" id="play-btn">Play again</button>
+        </div>
+
+    </main>
+</body>
+
+</html>

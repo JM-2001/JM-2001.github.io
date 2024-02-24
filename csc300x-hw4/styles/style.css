@@ -1,0 +1,140 @@
+body,
+html {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin: 0px;
+    background-color: #B4D4FF;
+}
+
+/* Header & Nav */
+header {
+    background-color: #86B6F6;
+}
+
+header nav {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header nav ul {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+header nav ul li {
+    display: inline-block;
+    height: 50px;
+    width: 125px;
+    margin: 0px 10px;
+}
+
+header nav ul li a {
+    display: block;
+    line-height: 50px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: capitalize;
+    color: #000000;
+}
+
+header nav ul li a.current,
+header nav ul li a:hover {
+    background-color: #8ebefd;
+}
+
+/* Main of index.html */
+main {
+    padding: 10px;
+}
+
+main h1,
+main h2,
+main h3,
+main h4 {
+    margin: 15px 0px;
+}
+
+main p {
+    margin: 5px 0px;
+}
+
+#player-div {
+    height: max-content;
+    margin: 20px 30px;
+    border: 5px solid #a7c1e4;
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+}
+
+#player-options-div {
+    margin: 10px 0px;
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.option-div {
+    height: 250px;
+    width: 200px;
+    border: 5px solid #a7c1e4;
+    border-radius: 20px;
+}
+
+.option-div-player {
+    border: 5px solid #ed5b4e;
+
+}
+
+.option-div-computer {
+    border: 5px solid #4e86ed;
+
+}
+
+.option-div img {
+    height: 100%;
+    width: 100%;
+}
+
+#computer-div {
+    height: max-content;
+    width: max-content;
+    margin: 20px auto;
+    border: 5px solid #a7c1e4;
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#game-results-div  {
+    height: max-content;
+    width: max-content;
+    margin: 20px auto;
+    border: 5px solid #a7c1e4;
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+}
+
+#play-btn {
+    height: 50px;
+    width: 150px;
+    margin: 0px 0px 0px 250px;
+    outline: none;
+    background-color: transparent;
+    border: 5px solid #a7c1e4;
+    border-radius: 20px;
+    font-weight: bold;
+}
+#play-btn:hover {
+    border: 5px solid #86B6F6;
+    background-color: #86B6F6;
+}
