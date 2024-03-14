@@ -1,0 +1,110 @@
+<!--
+    Jonathan Moreno
+    Assignment 5
+    This assignment is meant to demonstrate our html, css, and javascript knowledge in order to make this webpage. This webpage allows
+    the user to enter a github username which will display that user's repos. The repo's name, description, and stats are displayed. 
+-->
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../CSS/style.css">
+    <script src="../JavaScript/script.js" defer></script>
+    <title>Github API</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <h1>Github API</h1>
+            <ul>
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="search-bar-div">
+            <form class="search-bar">
+                <label for="searchTextBar" id="searchTextBar-label">Empty</label>
+                <input type="text" id="searchTextBar" name="searchTextBar"
+                    placeholder="Enter a Github Username: JM-2001">
+                <label for="search-bar-btn" id="search-bar-btn-label">
+                    <button type="submit" id="search-bar-btn">
+                        <img alt="search icon" src="../Images/search.png">
+                    </button>
+                </label>
+            </form>
+        </div>
+
+        <div id="github-container">
+
+            <!-- This is the template
+            <div class="github-item">
+                <div class="item-header">
+                    <img src="../Images/github.svg" alt="Github Icon" class="github-icon">
+                    <section class="item-header-section">
+                        <h1>
+                            <a href="#">Title</a>
+                        </h1>
+                        <div class="item-header-div">
+                            <div>
+                                <img src="../Images/star-solid.svg" alt="Github favorite">
+                                <p>10</p>
+                            </div>
+                            <div>
+                                <img src="../Images/code-branch-solid.svg" alt="Github Fork">
+                                <p>4</p>
+                            </div>
+                        </div>
+                    </section>
+                </div> 
+                <div class="item-desc">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua. Semper viverra nam libero justo laoreet sit. Sed blandit libero
+                        volutpat sed.
+                        Potenti nullam ac tortor vitae purus. Dignissim enim sit amet venenatis. Penatibus et magnis dis
+                        parturient montes nascetur.
+                        Ante in nibh mauris cursus mattis molestie a iaculis at. In metus vulputate eu scelerisque felis
+                        imperdiet. In fermentum posuere
+                        urna nec tincidunt praesent semper. Commodo ullamcorper a lacus vestibulum sed arcu. Ut eu sem
+                        integer vitae justo eget magna fermentum
+                        iaculis.
+                    </p>
+                </div>
+                <div class="item-stats">
+                    <ul class="item-stats-ul">
+                        <li class="stat-creation">
+                            Creation Date:
+                            <strong>Dec 2023</strong>
+                        </li>
+                        <li class="stat-update">
+                            Update Date:
+                            <strong>1 week ago</strong>
+                        </li>
+                        <li class="stat-commits">
+                            Commits:
+                            <strong>100</strong>
+                        </li>
+                        <li class="stat-watchers">
+                            Watchers:
+                            <strong>5</strong>
+                        </li>
+                        <li class="stat-languages">
+                            Languages:
+                            <strong>HTML</strong>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        -->
+        </div>
+
+    </main>
+</body>
+
+</html>
