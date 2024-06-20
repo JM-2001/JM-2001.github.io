@@ -1,0 +1,81 @@
+---
+import BaseLayout from "./Layout.astro";
+import { Image } from "astro:assets";
+const { frontmatter } = Astro.props;
+---
+
+<BaseLayout pageTitle={frontmatter.title}>
+  <main>
+    <section class="big-marg project-sec">
+      <div class="project-content-div">
+        <div class="project-content-gallery">
+          <div class="project-content-img">
+            <Image
+              src={frontmatter.image.url}
+              alt={frontmatter.image.alt}
+              height={1500}
+              width={2500}
+              loading="eager"
+            />
+          </div>
+          <div class="project-content-img">
+            <Image
+              src={frontmatter.worksImage1.url}
+              alt={frontmatter.worksImage1.alt}
+              height={1500}
+              width={2500}
+              loading="eager"
+            />
+          </div>
+          <div class="project-content-img">
+            <Image
+              src={frontmatter.worksImage2.url}
+              alt={frontmatter.worksImage2.alt}
+              height={1500}
+              width={2500}
+              loading="eager"
+            />
+          </div>
+        </div>
+      </div>
+      <h1>{frontmatter.title}</h1>
+      <h2>Description</h2>
+      <slot />
+
+      <h2>Technologies</h2>
+      <div class="tech-div">
+        <h3>Platform:</h3>
+        <p>
+          {frontmatter.platform}
+        </p>
+      </div>
+
+      <div class="tech-div">
+        <h3>Stack:</h3>
+        <p>
+          {frontmatter.stack}
+        </p>
+      </div>
+
+      <div class="tech-div">
+        <h3>Website:</h3>
+        <p>
+          <a
+            href={frontmatter.website}
+            target="_blank"
+            rel="noopener noreferrer">{frontmatter.website}</a
+          >
+        </p>
+      </div>
+
+      <div class="tech-div">
+        <h3>Github:</h3>
+        <p>
+          <a href={frontmatter.github} target="_blank" rel="noopener noreferrer"
+            >{frontmatter.github}</a
+          >
+        </p>
+      </div>
+    </section>
+  </main>
+</BaseLayout>

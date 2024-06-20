@@ -1,0 +1,33 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "../layouts/Layout.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+const allProjects = await getCollection("projects");
+const pageTitle = "Works";
+---
+
+<Layout pageTitle={pageTitle}>
+  <main>
+    <section class="projects-div big-marg">
+      <h1>Projects</h1>
+      <div class="projects-div-flex">
+        {
+          allProjects
+            .sort((a, b) => b.data.projectId - a.data.projectId)
+            .map((card) => (
+              <ProjectCard
+                projectId={card.data.projectId}
+                featured={card.data.featured}
+                pageUrl={`/projects/${card.slug}/`}
+                imgSrc={card.data.image.url}
+                name={card.data.title}
+                desc={card.data.description}
+                githubUrl={card.data.github}
+                techStack={card.data.stack}
+              />
+            ))
+        }
+      </div>
+    </section>
+  </main>
+</Layout>

@@ -1,0 +1,33 @@
+---
+import { Image } from "astro:assets";
+---
+
+<div class="hero">
+  <div class="hero-left">
+    <h2>Hi there👋</h2>
+    <h1>
+      My name is
+      <span>Jonathan Moreno</span>
+      <br />
+      I'm a Computer Science student at UNC-Greensboro with a passion for learning
+      and creating.
+    </h1>
+    <p>
+      Ever since I was a kid, I've always been fascinated by technology and how
+      it works. I would go online and search how different aspects of technology
+      worked. Eventually, I started to learn how to code and create my own
+      projects. I've always been a creative person and I love to create things
+      that people can use and enjoy. I'm always looking for new ways to learn
+      and grow as a developer.
+    </p>
+  </div>
+  <div class="hero-right">
+    <Image
+      src="/public/me.png"
+      alt="Character"
+      height={500}
+      width={500}
+      loading="eager"
+    />
+  </div>
+</div>

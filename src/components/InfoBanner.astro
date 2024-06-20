@@ -1,0 +1,21 @@
+---
+interface Props {
+  name: string;
+  desc: string;
+  gitLink: string;
+  techStack: string;
+  imgLink: string;
+}
+
+const { name, desc, gitLink, techStack, imgLink } = Astro.props;
+---
+
+<div class="project-card">
+  <!-- <Image src={imgLink} alt={name} inferSize={true} loading="eager" /> -->
+
+  <!-- <img src={imgLink} alt={name} /> -->
+  <h2>{name}</h2>
+  <p class="project-desc">{desc}</p>
+  <p class="project-techstack">Built with: {techStack}</p>
+  <a href={gitLink} target="_blank" rel="noopener noreferrer">View Project</a>
+</div>

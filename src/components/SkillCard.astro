@@ -1,0 +1,15 @@
+---
+import { Image } from "astro:assets";
+
+interface Props {
+  name: string;
+  imgLink: string;
+}
+
+const { name, imgLink } = Astro.props;
+---
+
+<div class="skill-card">
+  <Image src={imgLink} alt={name} inferSize={true} loading="eager" />
+  <h2>{name}</h2>
+</div>

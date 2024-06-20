@@ -1,0 +1,46 @@
+---
+import { Image } from "astro:assets";
+
+interface Props {
+  projectId: number;
+  featured: boolean;
+  pageUrl: string;
+  githubUrl: string;
+  imgSrc: string;
+  name: string;
+  desc: string;
+  techStack: string;
+}
+
+const {
+  projectId,
+  featured,
+  pageUrl,
+  githubUrl,
+  imgSrc,
+  name,
+  desc,
+  techStack,
+} = Astro.props;
+---
+
+<div class="project-card">
+  <div class="project-card-image">
+    <!-- <Image src={`../../public${imgSrc}`} alt={name} inferSize={true} /> -->
+
+    <Image src={imgSrc} alt={name} height={1500} width={2500} loading="eager" />
+
+    <!-- <img src={imgSrc} alt={name} /> -->
+  </div>
+  <div class="project-card-info">
+    <h2>{name}</h2>
+    <p class="project-desc">{desc}</p>
+    <p class="project-techstack">Built with: {techStack}</p>
+    <div class="project-card-btns">
+      <a href={pageUrl} rel="noopener noreferrer">View Project</a>
+      <a href={githubUrl} target="_blank" rel="noopener noreferrer">
+        View on Github</a
+      >
+    </div>
+  </div>
+</div>
