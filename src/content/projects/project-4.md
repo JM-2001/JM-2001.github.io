@@ -4,13 +4,13 @@ featured: true
 title: "IndieDev"
 description: "A social media platform for indie game developers to share their projects and collaborate with other developers. Users can create an account, create posts, and comment on other posts. Admins can delete posts and comments."
 image:
-  url: "/project-images/Indie-Dev.png"
+  url: "/main/project-images/Indie-Dev.png"
   alt: "IndieDev Homepage"
 worksImage1:
-  url: "/image-1.webp"
+  url: "/main/image-1.webp"
   alt: "first image of your project."
 worksImage2:
-  url: "/image-2.webp"
+  url: "/main/image-2.webp"
   alt: "second image of your project."
 platform: Web
 stack: HTML, Vanilla CSS, JavaScript, MySQL, Java, Spring Boot, Thymeleaf
