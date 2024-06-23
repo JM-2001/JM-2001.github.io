@@ -1,9 +1,44 @@
 ---
-
+import { boolean } from "astro/zod";
 ---
 
-<div class="nav-bar">
-  <ul>
+<div class="nav-bar" transition:persist>
+  <ul class="not-hamburger">
+    <li>
+      <a href="/">Home</a>
+    </li>
+    <li>
+      <a href="/works">Portfolio</a>
+    </li>
+    <li>
+      <a href="/#about-me">About Me</a>
+    </li>
+    <li>
+      <a href="/#contact-me">Contact Me</a>
+    </li>
+  </ul>
+  <ul class="hamburger">
+    <li>
+      <a href="/">
+        <img src="/favicon.ico" alt="logo" class="logo" />
+      </a>
+    </li>
+    <li id="menuBtn" transition:persist>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        x="0px"
+        y="0px"
+        width="50"
+        height="50"
+        viewBox="0 0 50 50"
+      >
+        <path
+          d="M 5 8 A 2.0002 2.0002 0 1 0 5 12 L 45 12 A 2.0002 2.0002 0 1 0 45 8 L 5 8 z M 5 23 A 2.0002 2.0002 0 1 0 5 27 L 45 27 A 2.0002 2.0002 0 1 0 45 23 L 5 23 z M 5 38 A 2.0002 2.0002 0 1 0 5 42 L 45 42 A 2.0002 2.0002 0 1 0 45 38 L 5 38 z"
+        ></path>
+      </svg>
+    </li>
+  </ul>
+  <ul class="nav-mobile hidden">
     <li>
       <a href="/">Home</a>
     </li>
@@ -18,3 +53,142 @@
     </li>
   </ul>
 </div>
+
+<!-- <script is:inline>
+  // data-astro-rerun
+  const navBar = document.querySelector(".nav-bar");
+  const navMobile = document.querySelector(".nav-mobile");
+  const menu = document.getElementById("menuBtn");
+  let menuOpen = false;
+
+  if (menu) {
+    console.log("menu exists");
+    console.log(menu);
+    menu.addEventListener("click", () => {
+      if (menuOpen === true) {
+        console.log("menu is closed");
+        navMobile.classList.add("hidden");
+        navBar.classList.remove("expanded");
+        navBar.classList.add("collapsed");
+        menuOpen = false;
+      } else {
+        console.log("menu is open");
+        navMobile.classList.remove("hidden");
+        navBar.classList.remove("collapsed");
+        navBar.classList.add("expanded");
+
+        menuOpen = true;
+      }
+    });
+  }
+</script> -->
+
+<!-- <script is:inline>
+  // data-astro-rerun
+  const navBar = document.querySelector(".nav-bar");
+  const navMobile = document.querySelector(".nav-mobile");
+  const menu = document.getElementById("menuBtn");
+  let menuOpen = false;
+
+  if (menu) {
+    menu.addEventListener("click", () => {
+      if (menuOpen) {
+        let animationsCompleted = 0; // Counter to track completed animations
+
+        // Start fade-out effect
+        navMobile.style.opacity = "0";
+
+        // Listen for the end of the opacity transition
+        navMobile.addEventListener(
+          "transitionend",
+          () => {
+            animationsCompleted++;
+            if (animationsCompleted === 2) {
+              // Check if both animations are done
+              navMobile.classList.add("hidden");
+              navMobile.style.opacity = ""; // Reset opacity
+            }
+          },
+          { once: true }
+        );
+
+        // Start collapse animation
+        navBar.classList.remove("expanded");
+        navBar.classList.add("collapsed");
+
+        // Listen for the end of the collapse animation
+        navBar.addEventListener(
+          "animationend",
+          () => {
+            animationsCompleted++;
+            if (animationsCompleted === 2) {
+              // Check if both animations are done
+              navBar.classList.remove("collapsed"); // Clean up
+              navMobile.classList.add("hidden");
+            }
+          },
+          { once: true }
+        );
+
+        menuOpen = false;
+      } else {
+        // Reset counter and states for expanding
+        navBar.classList.remove("collapsed");
+        navMobile.classList.remove("hidden");
+        setTimeout(() => (navMobile.style.opacity = "1"), 10); // Slight delay for CSS to catch up
+        navBar.classList.add("expanded");
+        menuOpen = true;
+      }
+    });
+  }
+</script> -->
+
+<script is:inline>
+  // data-astro-rerun
+  const navBar = document.querySelector(".nav-bar");
+  const navMobile = document.querySelector(".nav-mobile");
+  const menu = document.getElementById("menuBtn");
+  let menuOpen = false;
+
+  if (menu) {
+    menu.addEventListener("click", () => {
+      if (menuOpen) {
+        // Start collapse animation for both navBar and navMobile
+        navBar.classList.remove("expanded");
+        navBar.classList.add("collapsed");
+        navMobile.classList.remove("expanded");
+        navMobile.classList.add("collapsed");
+
+        // Cleanup after collapse animation
+        navBar.addEventListener(
+          "animationend",
+          () => {
+            navBar.classList.remove("collapsed"); // Clean up navBar
+          },
+          { once: true }
+        );
+
+        navMobile.addEventListener(
+          "animationend",
+          () => {
+            navMobile.classList.add("hidden"); // Hide navMobile after animation
+            navMobile.classList.remove("collapsed"); // Clean up navMobile
+            navMobile.style.opacity = ""; // Reset opacity for next time
+          },
+          { once: true }
+        );
+
+        menuOpen = false;
+      } else {
+        // Prepare for expanding
+        navBar.classList.remove("collapsed");
+        navMobile.classList.remove("hidden");
+        navMobile.classList.remove("collapsed");
+        navBar.classList.add("expanded");
+        navMobile.classList.add("expanded");
+
+        menuOpen = true;
+      }
+    });
+  }
+</script>

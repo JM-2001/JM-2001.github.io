@@ -36,13 +36,18 @@ header {
   position: sticky;
   top: 0;
 }
+
 .nav-bar {
   height: 50px;
-  width: 100%;
   padding: 10px 0px;
 }
 
-.nav-bar ul,
+.hamburger {
+  display: none;
+}
+
+.not-hamburger,
+.nav-mobile,
 .footer-right ul {
   list-style: none;
   padding: 0px;
@@ -52,9 +57,11 @@ header {
   justify-content: center;
   align-items: center;
   flex-direction: row;
+  flex-wrap: wrap;
 }
 
-.nav-bar ul li,
+.not-hamburger li,
+.nav-mobile li,
 .footer-right ul li {
   display: block;
   height: 50px;
@@ -111,6 +118,7 @@ footer {
   display: flex;
   justify-content: space-between;
   flex-direction: row;
+  flex-wrap: wrap;
 }
 
 h1 {
@@ -478,10 +486,87 @@ body::-webkit-scrollbar-thumb,
   }
 }
 
+@keyframes expandNavBar {
+  from {
+    max-height: 50px; /* Initial height of the nav-bar */
+  }
+  to {
+    max-height: 500px; /* Sufficiently large value to cover the expanded content */
+  }
+}
+
+@keyframes collapseNavBar {
+  from {
+    max-height: 500px; /* Sufficiently large value to cover the expanded content */
+  }
+  to {
+    max-height: 50px; /* Initial height */
+  }
+}
+
+.expanded {
+  animation-duration: 2s;
+  animation-name: expandNavBar;
+  animation-fill-mode: forwards; /* Ensures the animation stays at the final state */
+}
+
+.collapsed {
+  animation-duration: 1s;
+  animation-name: collapseNavBar;
+  animation-fill-mode: forwards; /* Ensures the animation stays at the final state */
+}
+
+@keyframes fadeOutNavMobile {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeInNavMobile {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.nav-mobile.collapsed {
+  animation: fadeOutNavMobile 1s forwards;
+}
+
+.nav-mobile.expanded {
+  animation: fadeInNavMobile 2s forwards;
+}
+
 /* Responsive for all pages */
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
+  .nav-bar {
+    height: auto;
+    padding: 10px;
+  }
+
+  .not-hamburger {
+    display: none;
+  }
+
+  .hamburger {
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
   footer {
     height: max-content;
   }
@@ -540,6 +625,35 @@ body::-webkit-scrollbar-thumb,
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
+  .nav-bar {
+    height: auto;
+    padding: 10px;
+  }
+
+  .not-hamburger {
+    display: none;
+  }
+
+  .hamburger {
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .nav-bar ul li {
+    display: block;
+    height: 50px;
+    width: 150px;
+    padding: 0px 10px;
+    margin: 0px 10px;
+  }
+
   footer {
     height: max-content;
   }
@@ -601,6 +715,27 @@ body::-webkit-scrollbar-thumb,
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
+  .nav-bar {
+    height: 50px;
+    padding: 10px 0px;
+  }
+
+  .hamburger {
+    display: none;
+  }
+
+  .not-hamburger {
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
   .hero {
     /* width: 100%; */
     /* height: 30vh; */
