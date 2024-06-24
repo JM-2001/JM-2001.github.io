@@ -18,4 +18,4 @@ website: N/A
 github: https://github.com/JM-2001/Password-Generator
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras faucibus a tortor at molestie. Sed pellentesque leo auctor, auctor lorem nec, venenatis risus. Vivamus commodo ipsum vitae orci finibus, vel porta nunc viverra. In hac habitasse platea dictumst. Nunc pretium, ligula ultricies consequat sollicitudin, enim ex ullamcorper nisl.
+In this website, it was created to demonstrate HTML, CSS, and JavaScript skills by creating a website that can generate passwords. The user is informed of the inportance on password safety and allows them to generate a password based on their selected options. These selected options can be numbers, special chacracters and uppercase letters.

@@ -18,4 +18,4 @@ website: N/A
 github: https://github.com/JM-2001/Simple-JAVA-Swing-Word-Counter
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras faucibus a tortor at molestie. Sed pellentesque leo auctor, auctor lorem nec, venenatis risus. Vivamus commodo ipsum vitae orci finibus, vel porta nunc viverra. In hac habitasse platea dictumst. Nunc pretium, ligula ultricies consequat sollicitudin, enim ex ullamcorper nisl.
+A simple beginner Java Swing application created to explore how to use Java Swing and it's features. In this application, it can count the number of words or count the number of characters in a text file or within the text area. The user can import a text file to the application which will be processed and displayed in the text area.

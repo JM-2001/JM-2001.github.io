@@ -18,4 +18,4 @@ website: N/A
 github: https://github.com/JM-2001/Java-Work-Pay-Calculator
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras faucibus a tortor at molestie. Sed pellentesque leo auctor, auctor lorem nec, venenatis risus. Vivamus commodo ipsum vitae orci finibus, vel porta nunc viverra. In hac habitasse platea dictumst. Nunc pretium, ligula ultricies consequat sollicitudin, enim ex ullamcorper nisl.
+A simple Java Swing application that further explores the Java Swing environment. In this application, the user can calculate their daily or weekly net income by inputting the number of hours worked and workly wage. Furthermore, the user can add or remove the worked timeslots from the list box.
