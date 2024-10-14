@@ -82,31 +82,31 @@ header {
   align-items: center;
 }
 
-.nav-bar ul li a:hover,
+.nav-bar ul li a:not(.hamburger li:first-child a):hover,
 .footer-right ul li a:hover {
   background-color: #4592fd;
 }
 
-.nav-bar a {
+.nav-bar a:not(.hamburger li:first-child a) {
   position: relative;
 }
 
-.nav-bar a::before,
-.nav-bar a::after {
+.nav-bar a:not(.hamburger li:first-child a)::before,
+.nav-bar a:not(.hamburger li:first-child a)::after {
   content: "<";
   opacity: 0;
   transition: opacity 0.3s ease;
 }
 
-.nav-bar a::after {
+.nav-bar a:not(.hamburger li:first-child a)::after {
   content: ">";
   right: 0;
 }
 
-.nav-bar a:hover::before,
-.nav-bar a:hover::after,
-.nav-bar a:focus::before,
-.nav-bar a:focus::after {
+.nav-bar a:not(.hamburger li:first-child a):hover::before,
+.nav-bar a:not(.hamburger li:first-child a):hover::after,
+.nav-bar a:not(.hamburger li:first-child a):focus::before,
+.nav-bar a:not(.hamburger li:first-child a):focus::after {
   opacity: 1;
 }
 
