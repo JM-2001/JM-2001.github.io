@@ -1,0 +1,34 @@
+---
+/* import { getCollection, render } from "astro:content";
+import MarkdownWorksLayout from "../../layouts/MarkdownWorksLayout.astro";
+
+export async function getStaticPaths() {
+  const projectEntries = await getCollection("projects");
+  return projectEntries.map((entry: { id: string; data: any }) => ({
+    //params: { slug: entry.slug },
+    params: { id: entry.id },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render(); */
+
+import MarkdownWorksLayout from "../../layouts/MarkdownWorksLayout.astro";
+import { getCollection, render } from "astro:content";
+
+export async function getStaticPaths() {
+  const projects = await getCollection("projects");
+  return projects.map((project) => ({
+    params: { id: project.id },
+    props: { project },
+  }));
+}
+
+const { project } = Astro.props;
+const { Content } = await render(project);
+---
+
+<MarkdownWorksLayout frontmatter={project.data}>
+  <Content />
+</MarkdownWorksLayout>

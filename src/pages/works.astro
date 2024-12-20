@@ -13,12 +13,12 @@ const pageTitle = "Works";
       <div class="projects-div-flex">
         {
           allProjects
-            .sort((a, b) => b.data.projectId - a.data.projectId)
-            .map((card) => (
+            .sort((a: any, b: any) => b.data.projectId - a.data.projectId)
+            .map((card: any) => (
               <ProjectCard
                 projectId={card.data.projectId}
                 featured={card.data.featured}
-                pageUrl={`/projects/${card.slug}/`}
+                pageUrl={`/projects/${card.id}/`}
                 imgSrc={card.data.image.url}
                 name={card.data.title}
                 desc={card.data.description}

@@ -131,7 +131,7 @@ h2 {
 
 p {
   font-size: 1em;
-  line-height: 1.5em;
+  line-height: 1.25em;
 }
 
 /* Compoments */
@@ -344,8 +344,12 @@ Projects
 
 @keyframes glow {
   50% {
-    box-shadow: 0 0 10px #4592fd, 0 0 20px #4592fd, 0 0 30px #4592fd,
-      0 0 40px #4592fd, 0 0 70px #4592fd;
+    box-shadow:
+      0 0 10px #4592fd,
+      0 0 20px #4592fd,
+      0 0 30px #4592fd,
+      0 0 40px #4592fd,
+      0 0 70px #4592fd;
   }
 }
 
@@ -408,18 +412,36 @@ Contact me
 
 /* MarkdownWorksLayout */
 /* WAS MOVED TO MEDIA QUERIES */
+.project-md-div ul {
+  padding: 0px 0px 0px 20px;
+  margin: 5px 0px;
+}
+
+.md-chall-div ol {
+  padding: 0px 0px 0px 20px;
+  margin: 5px 0px;
+}
+
+.project-md-div h3 {
+  margin: 15px 0px 5px 0px;
+}
 
 .tech-div {
   /* background-color: var(--testing-background-color-1); */
   margin: 10px 0px;
-  display: flex;
+  display: grid;
+  grid-template-columns: 100px 1fr; /* First column fixed width for labels, second column flexible */
+  gap: 20px;
+  align-items: start;
+  /*   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 20px;
+  gap: 20px; */
 }
 
 .tech-div h3 {
   margin: 0px;
+  justify-self: start;
 }
 
 .project-sec p {
@@ -620,6 +642,21 @@ body::-webkit-scrollbar-thumb,
     display: block;
     max-width: 100%;
     height: auto;
+  }
+
+  .tech-div {
+    /* background-color: var(--testing-background-color-1); */
+    margin: 10px 0px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .tech-div p,
+  .tech-div p a {
+    word-break: break-all;
   }
 }
 

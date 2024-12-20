@@ -8,7 +8,7 @@ const { frontmatter } = Astro.props;
   <main>
     <section class="big-marg project-sec">
       <div class="project-content-div">
-        <div class="project-content-gallery">
+        <!--         <div class="project-content-gallery">
           <div class="project-content-img">
             <Image
               src={frontmatter.image.url}
@@ -36,11 +36,42 @@ const { frontmatter } = Astro.props;
               loading="eager"
             />
           </div>
+        </div> -->
+        <div class="project-content-gallery">
+          <div class="project-content-img">
+            <Image
+              src={frontmatter.image.url}
+              alt={frontmatter.image.alt}
+              height={1500}
+              width={2500}
+              loading="eager"
+            />
+          </div>
+
+          {
+            frontmatter.worksImages &&
+              frontmatter.worksImages.map(
+                (image: { url: string; alt: string }) => (
+                  <div class="project-content-img">
+                    <Image
+                      src={image.url}
+                      alt={image.alt}
+                      height={1500}
+                      width={2500}
+                      loading="eager"
+                    />
+                  </div>
+                )
+              )
+          }
         </div>
       </div>
       <h1>{frontmatter.title}</h1>
       <h2>Description</h2>
-      <slot />
+      <!-- Inserts the markdown content -->
+      <div class="project-md-div">
+        <slot />
+      </div>
 
       <h2>Technologies</h2>
       <div class="tech-div">
@@ -60,20 +91,38 @@ const { frontmatter } = Astro.props;
       <div class="tech-div">
         <h3>Website:</h3>
         <p>
-          <a
-            href={frontmatter.website}
-            target="_blank"
-            rel="noopener noreferrer">{frontmatter.website}</a
-          >
+          {
+            frontmatter.website === "#" || frontmatter.website === "N/A" ? (
+              "N/A"
+            ) : (
+              <a
+                href={frontmatter.website}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {frontmatter.website}
+              </a>
+            )
+          }
         </p>
       </div>
 
       <div class="tech-div">
         <h3>Github:</h3>
         <p>
-          <a href={frontmatter.github} target="_blank" rel="noopener noreferrer"
-            >{frontmatter.github}</a
-          >
+          {
+            frontmatter.github === "#" || frontmatter.github === "N/A" ? (
+              "N/A"
+            ) : (
+              <a
+                href={frontmatter.github}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {frontmatter.github}
+              </a>
+            )
+          }
         </p>
       </div>
     </section>
