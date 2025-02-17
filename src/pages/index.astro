@@ -90,19 +90,31 @@ const pageTitle = "Home";
       <h1>Projects</h1>
       <div class="projects-div-flex">
         {
-          allProjects.map((card: any) => (
-            <ProjectCard
-              projectId={card.data.projectId}
-              featured={card.data.featured}
-              pageUrl={`/projects/${card.id}/`}
-              imgSrc={card.data.image.url}
-              name={card.data.title}
-              desc={card.data.description}
-              githubUrl={card.data.github}
-              techStack={card.data.stack}
-            />
-          ))
+          allProjects
+            .filter((card: any) => card.data.featured) // Filter projects to only show featured ones
+            .map((card: any) => (
+              <ProjectCard
+                projectId={card.data.projectId}
+                featured={card.data.featured}
+                pageUrl={`/projects/${card.id}/`}
+                imgSrc={card.data.image.url}
+                name={card.data.title}
+                desc={card.data.description}
+                githubUrl={card.data.github}
+                techStack={card.data.stack}
+              />
+            ))
         }
+        <ProjectCard
+          projectId={0}
+          featured={true}
+          pageUrl={"/works"}
+          imgSrc={"/on_a_moon.png"}
+          name={"View more Projects"}
+          desc={"This is my portfolio website where I showcase all of my projects and skills. I used AstroJS, a static site generator, to create this website. Furthermore, this thumbnail is from a kurzgesagt video."}
+          githubUrl={"/works"}
+          techStack={"AstroJS, JS, HTML, CSS"}
+        />
       </div>
     </section>
     <section class="aboutme-div" id="about-me">

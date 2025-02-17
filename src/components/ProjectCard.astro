@@ -25,11 +25,29 @@ const {
 ---
 
 <div class="project-card">
-  <div class="project-card-image">
+  <div class="project-card-image-div">
     <!-- <Image src={`../../public${imgSrc}`} alt={name} inferSize={true} /> -->
 
-    <Image src={imgSrc} alt={name} height={1500} width={2500} loading="eager" />
-
+    <Image
+      src={imgSrc}
+      alt={name}
+      height={1500}
+      width={2500}
+      loading="eager"
+      class="project-card-image-div-img"
+    />
+    {
+      featured && (
+        <Image
+          src="/feature.png"
+          alt="Featured"
+          height={30}
+          width={30}
+          loading="eager"
+          class="project-card-image-div-img-featured"
+        />
+      )
+    }
     <!-- <img src={imgSrc} alt={name} /> -->
   </div>
   <div class="project-card-info">

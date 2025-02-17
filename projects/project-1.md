@@ -18,14 +18,6 @@ worksImages: [
   {
     url: "/project-images/word-counter-fileselect.png",
     alt: "Selecting text file"    
-  },
-  {
-    url: "/image-1.webp", 
-    alt: "first image of your project."
-  }, 
-  {
-    url: "/image-1.webp",
-    alt: "first image of your project."    
   }
 ]
 
