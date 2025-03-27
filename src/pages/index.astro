@@ -92,6 +92,7 @@ const pageTitle = "Home";
         {
           allProjects
             .filter((card: any) => card.data.featured) // Filter projects to only show featured ones
+            .sort((a: any, b: any) => b.data.projectId - a.data.projectId) // Sort by ID descending (largest to smallest)
             .map((card: any) => (
               <ProjectCard
                 projectId={card.data.projectId}
