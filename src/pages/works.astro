@@ -1,7 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import Layout from "../layouts/Layout.astro";
-import ProjectCard from "../components/ProjectCard.astro";
+import ProjectsFilter from "../components/ProjectsFilter.svelte";
 const allProjects = await getCollection("projects");
 const pageTitle = "Works";
 ---
@@ -9,32 +9,7 @@ const pageTitle = "Works";
 <Layout pageTitle={pageTitle}>
   <main>
     <section class="projects-div big-marg">
-      <div class="projects-div-header">
-        <h1>Projects</h1>
-        <!--         <div class="projects-div-header-right">
-          <p>Featured:</p>
-          <ToggleSwitchComp />
-        </div> -->
-      </div>
-      <!--       <h1>Projects</h1> -->
-      <div class="projects-div-flex">
-        {
-          allProjects
-            .sort((a: any, b: any) => b.data.projectId - a.data.projectId)
-            .map((card: any) => (
-              <ProjectCard
-                projectId={card.data.projectId}
-                featured={card.data.featured}
-                pageUrl={`/projects/${card.id}/`}
-                imgSrc={card.data.image.url}
-                name={card.data.title}
-                desc={card.data.description}
-                githubUrl={card.data.github}
-                techStack={card.data.stack}
-              />
-            ))
-        }
-      </div>
+      <ProjectsFilter client:only="svelte" projects={allProjects} />
     </section>
   </main>
 </Layout>
